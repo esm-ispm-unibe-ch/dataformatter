@@ -3,7 +3,7 @@ Title: Formats datasets for meta-analyses
 Version: 0.0.0.9000
 Authors@R: person("Thodoris", "Papakonstantinou", email = "tpapak@mail.com", role = c("aut", "cre"))
 Description: reshape datasets wide to long
-Depends: R (>= 3.4.1)
+Depends: R (>= 3.4.0)
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
