@@ -1,5 +1,6 @@
 
 wide2Long = function (data,type="binary") {
+  require(V8)
   library(V8)
   js <- V8::v8(typed_arrays = TRUE)
 #js$source(file=system.file("js/underscore-min.js", package="V8"))
