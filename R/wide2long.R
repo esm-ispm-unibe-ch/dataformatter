@@ -1,5 +1,5 @@
 
-wide2Long = function (data,type="binary") {
+wide2long = function (data,type="binary") {
   require(V8)
   library(V8)
   js <- V8::v8(typed_arrays = TRUE)

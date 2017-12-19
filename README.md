@@ -21,7 +21,7 @@ install_github("esm-ispm-unibe-ch/dataformatter")
 ###usage
 ```
 library(dataformatter)
-longData = readxl("./somedataset.xls")
-wideData = wide2long(longData,"binary")
+wideData = readxl("./somedataset.xls")
+longData = wide2long(wideData,"binary")
 ```
 
