@@ -11,6 +11,10 @@ R package to format data for meta-analysis
 - `data` is the dataset.
 - `type`: `"binary"` or `"continuous"`
 
+### long2wide(data,type)
+- `data` is the dataset.
+- `type`: `"binary"` or `"continuous"`
+
 
 ###installation
 ```
