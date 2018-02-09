@@ -1,5 +1,6 @@
 Sys.setenv(LANG = "en")
 #rm(list=ls())
+library(readxl)
 wbin <- read_excel("./acutemania_netwide_multiarm_binary.xls")
 wcont <- read_excel("./CPPS_netwide_multiarm_continuous.xls")
 

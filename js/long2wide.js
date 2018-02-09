@@ -1,14 +1,26 @@
-var longToWide = function (model,type) {
-  var mold = [];
-  switch(type){
-    case 'binary':
-    mold = [['t','tn','r','n'],[['t1','tn1','r1','n1'],['t2','tn2','r2','n2']]];
+var longToWide = function (model,flds) {
+  var id = _.head(flds)
+  var fields = _.rest(flds);
+  switch(flds){
+    case "binary":
+        id = 'id';
+    fields = ['t','tn','r','n'];
     break;
-    case 'continuous':
-    mold = [['t','y','sd','n'],[['t1','y1','sd1','n1'],['t2','y2','sd2','n2']]];
+    case "continuous":
+        id = 'id';
+    fields = ['t','y','sd','n'];
     break;
   }
-  var perId = _.groupBy(model,'id');
+  moldFields = function(fields){
+    var mold = _.unzip(
+      _.map(fields, function(f){
+        return [f.toString()+"1", f.toString()+"2"];
+      })
+    )
+    return [fields].concat([mold]);
+  };
+  var mold = moldFields(fields);
+  var perId = _.groupBy(model,id);
   var comps = _.map(perId, function(st){return getCombinations(st,2)});
   var res = _.map(comps, function(comp) {
     return _.map(comp, function(row) {
@@ -26,7 +38,5 @@ var longToWide = function (model,type) {
       },{});
     });
   });
-  // console.log('perid',perId,'comps',comps,'res',res);
-  // console.log(_.flatten(res));
   return _.flatten(res);
 };

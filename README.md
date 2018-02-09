@@ -11,9 +11,10 @@ R package to format data for meta-analysis
 - `data` is the dataset.
 - `type`: `"binary"` or `"continuous"`
 
-### long2wide(data,type)
+### long2wide(data,fields)
 - `data` is the dataset.
-- `type`: `"binary"` or `"continuous"`
+- `fields`: `"binary"` or `"continuous"` or a list of the column names starting
+  with study id, i.e. `c("study","treat","r","n")`
 
 
 ###installation
@@ -25,7 +26,11 @@ install_github("esm-ispm-unibe-ch/dataformatter")
 ###usage
 ```
 library(dataformatter)
-wideData = readxl("./somedataset.xls")
-longData = wide2long(wideData,"binary")
+longData = readxl("./somedataset.xls")
+wideData = long2wide(longData,c("id","t","r","n"))
 ```
-
+in the above example we defined manually the fields' names, which is the same as
+```
+wideData = long2wide(longData,"binary")
+```
+see <a href="http://cinema.ispm.ch/#doc" target="_blank">cinema.ispm.ch/#doc</a> for the default field names.
