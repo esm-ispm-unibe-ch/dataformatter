@@ -1,7 +1,7 @@
 Package: dataformatter
 Title: Formats datasets for meta-analysis
-Version: 0.0.1
-Authors@R: person("Thodoris", "Papakonstantinou", email = "tpapak@gmail.com", role = c("aut", "cre"))
+Version: 0.1.0
+Authors@R: person("Thodoris", "Papakonstantinou", email ="theodoros.papakonstantinou@ispm.unibe.ch", role = c("aut", "cre"))
 Description: Reshapes datasets from wide to long format and vice versa
 Depends: R (>= 3.3.1)
 License: GPL-3
